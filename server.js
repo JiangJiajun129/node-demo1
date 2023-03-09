@@ -27,23 +27,23 @@ var server = http.createServer(function (request, response) {
         response.write(`
 <!DOCTYPE html>
 <head>
-<link rel ="stylesheet" href="/x">
+<link rel ="stylesheet" href="/style.css">
 </head>
 <body>
 <h1>标题</h1>
 </body>
 `)
-        response.end()
-    } else if (path === '/x') {
+        response.end();
+    } else if (path === "/style.css") {
         response.statusCode = 200
         response.setHeader('Content-Type', 'text/css;charset=utf-8')
         response.write(`h1{color: red;}`)
-        response.end()
+        response.end();
     } else {
         response.statusCode = 404
         response.setHeader('Content-Type', 'text/html;charset=utf-8')
-        response.write(`你输入的路径不存在对应的内容`)
-        response.end()
+        response.write(`你访问的页面不存在`)
+        response.end();
     }
 
     /******** 代码结束，下面不要看 ************/
